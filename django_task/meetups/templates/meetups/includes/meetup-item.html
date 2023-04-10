@@ -1,0 +1,22 @@
+<!-- This code is reuseable thats why we create anothe file and know attached this file -->
+
+<li class="meetup-item">
+    <article>
+    <div class="meetup-summary">
+      <div class="meetup-image">
+        <img src="{{ image }}" alt="{{ tittle }}">
+      </div>
+      <div class="meetup-details">
+        <h3>{{ tittle}}</h3>
+        <address>{{ location }}</address>
+      </div>
+
+    </div>
+    <!-- Crate btn for more detail -->
+    <div class="meetup-actions">
+      <!--ese url likhna sa agr ham url ma jaga name chnage karen gn to koi farak nh pare ga -->
+      <a href="{% url 'meetup-detail' slug %}" class="btn"> More Detail</a>
+
+    </div>
+    </article>
+  </li>

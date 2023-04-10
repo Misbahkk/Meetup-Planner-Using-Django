@@ -1,0 +1,39 @@
+{% extends 'meetups/base/base.html'%}
+
+{% load static %}
+
+{% block title%} Meetups Project {% endblock %}
+
+{% block site_css %}
+<link rel="stylesheet" href="{% static 'meetups/style/all-meetup.css' %}">
+
+{% endblock %}
+
+<link rel="stylesheet" href="{% static 'meetups/style/base.css' %}">
+</head>
+{% block main_heading %}
+We Got Great meetups coming up!
+{% endblock %}
+
+{% block header_content %}
+<p>Find the one that best suits your needs!!</p>
+{% endblock %}
+
+
+{% block body %}
+
+<section>
+  <h2>Upcoming Meetups</h2>
+  <ol>
+    <!-- Start For Lop to get the material in views -->
+    {% for meetup_item in meetups %}
+    <!-- attached the file here of meetups_item -->
+    <!-- {% include 'meetups/includes/meetup-item.html' with tittle=meetup_item.tittle location='Pakistan'
+    slug=meetup_item.slug%} -->
+    {% include 'meetups/includes/meetup-item.html' with tittle=meetup_item.titele image=meetup_item.image.url location='Pakistan' slug=meetup_item.slug%}
+
+    {% endfor %}
+  </ol>
+</section>
+
+{% endblock %}
